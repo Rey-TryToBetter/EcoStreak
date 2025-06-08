@@ -1,0 +1,286 @@
+/* login.css - HANYA MODIFIKASI WARNA SESUAI TEMA ECOSTREAK */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+header {
+    display: flex;
+    align-items: center;
+    padding: 0 60px 0 80px;
+    background-color: transparent;
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+.title a{
+    display: flex;
+    text-decoration: none;
+}
+.title-text{
+    display: flex;
+}
+.title-1{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: oklch(0.448 0.119 151.328);
+}
+.title-2{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: oklch(0.627 0.194 149.214);
+}
+.login-register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to right, white, #ffe396);
+}
+.container-login {
+    margin-top: 100px;
+    position: relative;
+    width: 825px;
+    height: 520px;
+    border-radius: 30px;
+    margin: 20px;
+    overflow: hidden;
+    /* DIGANTI: Latar belakang menjadi putih bersih dengan bayangan lembut */
+    background-color: #f2ffc2;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    background-size: cover;
+}
+
+.form-box-login, .form-box-regist {
+    position: absolute;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    /* DIGANTI: Warna teks utama menjadi gelap agar mudah dibaca */
+    color: #374151;
+    z-index: 1;
+    transition: 0.6s ease-in-out 0.8s, visibility 0s 0.6s;
+}
+
+.container-login.active .form-box-login, .form-box-regist {
+    right: 50%;
+}
+.form-box-regist {
+    visibility: hidden;
+    right: 0;
+}
+.container-login.active .form-box-regist {
+    visibility: visible;
+    right: 50%;
+}
+.form-box-login {
+    visibility: visible;
+    right: 0;
+}
+.container-login.active .form-box-login {
+    visibility: hidden;
+    right: 50%;
+}
+
+form {
+    width: 100%;
+}
+
+.container-login h1{
+    font-size: 40px;
+    margin: -10px 0px;
+    /* DIGANTI: Warna judul menjadi hijau tua */
+    color: #064E3B;
+}
+
+.input-box {
+    position: relative;
+    margin: 30px 0px;
+    background-color: transparent;
+}
+
+.input-box input {
+    width: 70%;
+    padding: 15px 35px 15px 20px;
+    border-radius: 10px;
+    /* DIGANTI: Border abu-abu lembut */
+    border: 1px solid #D1D5DB;
+    outline: none;
+    font-size: 16px;
+    /* DIGANTI: Latar belakang input menjadi abu-abu sangat terang */
+    background-color: #d8ebff; 
+    /* DIGANTI: Warna teks input menjadi gelap */
+    color: #111827;
+}
+
+.input-box input::placeholder {
+    /* DIGANTI: Warna placeholder menjadi abu-abu */
+    color: #9CA3AF;
+}
+
+.input-box i {
+    position: absolute;
+    transform: translateY(50%);
+    top: 6px;
+    right: 12%;
+    font-size: 17px;
+    /* DIGANTI: Warna ikon disamakan dengan placeholder */
+    color: #9CA3AF;
+}
+
+.btn-login{
+    width: 84%;
+    height: 45px;
+    border-radius: 10px;
+    /* DIGANTI: Warna latar tombol utama menjadi hijau tua */
+    background-color: #065F46;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.toggle-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-box::before{
+    content: '';
+    position: absolute;
+    border-radius: 150px;
+    left: -250%;
+    width: 300%;
+    height: 100%;
+    /* DIGANTI: Warna panel geser menjadi hijau cerah */
+    background-color: #10B981;
+    z-index: 2;
+    transition: 0.8s ease-in-out;
+}
+
+.container-login.active .toggle-box::before{
+    left: 50%;
+}
+
+.toggle-panel-left, .toggle-panel-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    color: white;
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    z-index: 2;
+    transition: 0.5s ease-in;
+}
+.toggle-panel-left {
+    left: 0;
+    transition: ease-in-out 1.2s; 
+}
+.container-login.active .toggle-panel-left {
+    left: -50%;
+    transition: ease-in-out 0.6s; 
+}
+
+.toggle-panel-right {
+    right: -50%;
+    transition: ease-in-out 0.6s;
+}
+.container-login.active .toggle-panel-right {
+    right: 0%;
+    transition: ease-in-out 1.2s;
+}
+.btn-register-now, .btn-login-now{
+    width: 50%;
+    height: 45px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+.container-login {
+        margin-top: 90px;
+        height: 85vh;
+    }
+    .toggle-box::before {
+        left: 0;
+        width: 100%;
+        height: 300%;
+        top: -270%;
+        border-radius: 15vw;
+    }
+    .container-login.active .toggle-box::before{
+        left: 0;
+        top: 70%;
+    }
+    .form-box-login, .form-box-regist {
+        width: 100%;
+        height: 70%;
+        bottom: 0;
+    }
+        
+    .form-box-login{
+        bottom: 0;
+    }
+    .container-login.active .form-box-login{
+        right: 0;
+        bottom: 30%;
+    }
+    .form-box-regist{
+        right: 0;
+        bottom: 0;
+    }
+    .container-login.active .form-box-regist{
+        right: 0;
+        bottom: 30%;
+    }
+    .toggle-panel-left, .toggle-panel-right{
+        width: 100%;
+        height: 30%;
+    }
+    .toggle-panel-left {
+        top: 0;
+        gap: 0;
+        display: flex;
+        font-size: 70%;
+    }
+    .toggle-panel-right h1{
+        font-size: 300%;
+        margin-top: 15px;
+    }
+    .container-login.active .toggle-panel-left{
+        left: 0;
+        top: -30% ;
+    }
+    .toggle-panel-right {
+        right: 0;
+        bottom: -35%;
+        gap: 0;
+        display: flex;
+        font-size: 70%;
+        padding-top: 20px;
+    }
+    .container-login.active .toggle-panel-right{
+        bottom: 0;
+    }
+}
