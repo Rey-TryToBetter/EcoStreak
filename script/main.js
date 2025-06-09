@@ -1,5 +1,5 @@
 
-// POPUP JS
+// POPUP VIDEO
 document.addEventListener('DOMContentLoaded', () => {
     // Ambil elemen-elemen yang kita butuhkan dari HTML
     const openVideoButton = document.getElementById('open-video-popup');
@@ -46,4 +46,37 @@ document.addEventListener('DOMContentLoaded', () => {
             closePopup();
         }
     });
+});
+
+// POPUP ABOUT
+document.addEventListener('DOMContentLoaded', () => {
+    // Pastikan kode ini berjalan setelah elemen dimuat
+    const openFaktaButton = document.getElementById('open-fakta-popup');
+    const closeFaktaButton = document.getElementById('close-fakta-popup');
+    const faktaPopup = document.getElementById('fakta-popup');
+
+    // Cek jika elemen ada sebelum menambahkan event listener
+    if (openFaktaButton && closeFaktaButton && faktaPopup) {
+        
+        const openPopup = () => {
+            faktaPopup.classList.remove('hidden');
+        };
+
+        const closePopup = () => {
+            faktaPopup.classList.add('hidden');
+        };
+
+        openFaktaButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            openPopup();
+        });
+
+        closeFaktaButton.addEventListener('click', closePopup);
+
+        faktaPopup.addEventListener('click', (event) => {
+            if (event.target === faktaPopup) {
+                closePopup();
+            }
+        });
+    }
 });
