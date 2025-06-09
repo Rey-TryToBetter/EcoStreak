@@ -80,3 +80,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// POPUP ABOUT 2
+document.addEventListener('DOMContentLoaded', () => {
+    // Pastikan kode ini berjalan setelah elemen dimuat
+    const openFaktaButton2 = document.getElementById('open-fakta-popup-2');
+    const closeFaktaButton2 = document.getElementById('close-fakta-popup-2');
+    const faktaPopup2 = document.getElementById('fakta-popup-2');
+
+    // Cek jika elemen ada sebelum menambahkan event listener
+    if (openFaktaButton2 && closeFaktaButton2 && faktaPopup2) {
+        
+        const openPopup2 = () => {
+            faktaPopup2.classList.remove('hidden');
+        };
+
+        const closePopup2 = () => {
+            faktaPopup2.classList.add('hidden');
+        };
+
+        openFaktaButton2.addEventListener('click', (event) => {
+            event.preventDefault();
+            openPopup2();
+        });
+
+        closeFaktaButton2.addEventListener('click', closePopup2);
+
+        faktaPopup2.addEventListener('click', (event) => {
+            if (event.target === faktaPopup2) {
+                closePopup2();
+            }
+        });
+    }
+});
